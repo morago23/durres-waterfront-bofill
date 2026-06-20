@@ -13,24 +13,27 @@ const photos = [
 export default function GalleryPage() {
   return (
     <main className="min-h-screen flex flex-col p-6 sm:p-12 relative">
-      <header className="w-full max-w-7xl mx-auto mb-12 flex items-center justify-between relative z-10 animate-in">
-        <div>
-          <h1 className="text-3xl font-black tracking-[0.2em] uppercase mb-1 text-white">
-            Public Gallery
-          </h1>
-          <p className="text-white/60 font-light uppercase tracking-widest text-xs">
-            Durrës Waterfront Construction & Views
-          </p>
-        </div>
+      <header className="w-full max-w-7xl mx-auto mb-10 relative z-10 flex items-center justify-between animate-in">
         <Link 
           href="/"
-          className="h-12 px-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl flex items-center justify-center transition-colors text-sm font-bold uppercase tracking-widest gap-2 text-white"
+          className="text-white/60 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium uppercase tracking-widest"
         >
           <ArrowLeft className="w-4 h-4" /> Back
         </Link>
+        <span className="text-xs text-white/40 uppercase tracking-widest border border-white/20 px-3 py-1">Photos</span>
       </header>
 
-      <div className="flex-1 w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="text-center mb-16 animate-in delay-100">
+          <h1 className="text-4xl md:text-5xl font-black tracking-wider mb-4 text-white uppercase">
+            Public Gallery
+          </h1>
+          <div className="h-px w-24 bg-white/30 mx-auto mb-6" />
+          <p className="text-white/70 font-light max-w-2xl mx-auto text-lg">
+            Durrës Waterfront Construction & Views
+          </p>
+        </div>
+
         {/* Masonry Layout via CSS Columns */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
           {photos.map((photo, index) => (
